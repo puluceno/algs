@@ -1,6 +1,6 @@
-package com.algs.impl;
+package com.algs.sort.impl;
 
-import com.algs.Sort;
+import com.algs.sort.Sort;
 
 /**
  * Find the smallest element in the list and put it at the beginning of the

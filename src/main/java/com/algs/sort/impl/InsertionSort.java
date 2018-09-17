@@ -1,6 +1,6 @@
-package com.algs.impl;
+package com.algs.sort.impl;
 
-import com.algs.Sort;
+import com.algs.sort.Sort;
 
 public class InsertionSort implements Sort {
 
