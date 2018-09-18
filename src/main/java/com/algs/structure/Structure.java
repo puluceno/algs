@@ -2,7 +2,7 @@ package com.algs.structure;
 
 public interface Structure {
 
-	void push(Integer element);
+	void push(int element);
 
 	Integer pop();
 

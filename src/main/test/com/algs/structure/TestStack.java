@@ -1,6 +1,6 @@
 package com.algs.structure;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -22,27 +22,27 @@ public class TestStack {
 		stack.push(2);
 		stack.push(3);
 		stack.push(4);
-		assertTrue(4 == stack.pop());
-		assertTrue(3 == stack.pop());
-		assertTrue(2 == stack.pop());
-		assertTrue(1 == stack.pop());
+		assertEquals(4, stack.pop().intValue());
+		assertEquals(3, stack.pop().intValue());
+		assertEquals(2, stack.pop().intValue());
+		assertEquals(1, stack.pop().intValue());
 		stack.push(10);
-		assertTrue(10 == stack.pop());
+		assertEquals(10, stack.pop().intValue());
 		stack.push(20);
-		assertTrue(20 == stack.pop());
+		assertEquals(20, stack.pop().intValue());
 	}
 
 	@Test
 	public void testEmpty() {
 		stack.push(1);
-		assertTrue(1 == stack.pop());
-		assertTrue(null == stack.pop());
-		assertTrue(null == stack.pop());
+		assertEquals(1, stack.pop().intValue());
+		assertEquals(null, stack.pop());
+		assertEquals(null, stack.pop());
 	}
 
 	@Test(expected = StackOverflowError.class)
 	public void testFull() {
-		for (int i = 0; i <= stack.getSize() + 1; i++)
+		for (int i = 0; i <= stack.getSize(); i++)
 			stack.push(i);
 	}
 
