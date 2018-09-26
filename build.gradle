@@ -1,0 +1,11 @@
+apply plugin: 'java-library'
+apply plugin: 'eclipse'
+repositories {
+	mavenCentral()   
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'   
+}

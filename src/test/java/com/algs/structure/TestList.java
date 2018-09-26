@@ -20,6 +20,7 @@ public class TestList {
 	public void addToHead() {
 		list.addToHead(1);
 		assertSame(1, list.getFirst());
+
 		list.addToHead(10);
 		assertSame(10, list.getFirst());
 		assertSame(1, list.getLast());
@@ -46,6 +47,28 @@ public class TestList {
 
 	@Test
 	public void addToPosition() {
+		list.addToPosition(1, 0);
+		assertSame(1, list.getFirst());
+
+		list.add(2);
+		list.add(3);
+		assertSame(3, list.getSize());
+		assertSame(1, list.getFirst());
+		assertSame(3, list.getLast());
+
+		list.addToPosition(10, 1);
+		assertSame(4, list.getSize());
+		assertSame(10, list.get(1));
+
+		list.addToPosition(5, 0);
+		assertSame(5, list.getSize());
+		assertSame(5, list.getFirst());
+		assertSame(3, list.getLast());
+
+		list.addToPosition(20, list.getSize());
+		assertSame(20, list.getLast());
+		assertSame(3, list.get(4));
+		assertSame(2, list.get(3));
 	}
 
 	@Test
@@ -54,6 +77,7 @@ public class TestList {
 		list.add(2);
 		list.add(3);
 		assertSame(3, list.getSize());
+
 		list.remove(1);
 		assertSame(2, list.getSize());
 		assertSame(2, list.getFirst());

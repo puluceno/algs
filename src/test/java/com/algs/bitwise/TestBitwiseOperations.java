@@ -46,11 +46,14 @@ public class TestBitwiseOperations {
 
 	@Test
 	public void xorSwap() {
-		a ^= b
-				b ^= a
-				a ^= b
-		
-		assertEquals(b, ((a ^ b) ^ (a ^ b) ^ (a ^ b)));
-		assertEquals(d, ((a ^ d) ^ (a ^ d) ^ (a ^ d)));
+		byte valueA = a;
+		byte valueB = b;
+
+		a ^= b;
+		b ^= a;
+		a ^= b;
+
+		assertEquals(b, valueA);
+		assertEquals(a, valueB);
 	}
 }

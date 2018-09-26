@@ -9,13 +9,6 @@ public class LinkedList<T> implements ListStructure<T> {
 	private int size;
 	private Node<T> head;
 
-	public LinkedList() {
-	}
-
-	public LinkedList(int size) {
-		this.size = size;
-	}
-
 	@Override
 	public void addToHead(T element) {
 		if (Objects.nonNull(getFirst()))
@@ -42,7 +35,23 @@ public class LinkedList<T> implements ListStructure<T> {
 
 	@Override
 	public void addToPosition(T element, int position) {
+		if (position > getSize())
+			throw new ArrayIndexOutOfBoundsException(
+					"Index " + position + " is out of range for array size " + getSize() + " .");
 
+		Node<T> previous = head;
+		if (position == 0) {
+			head = new Node<>(head, element);
+			size++;
+			return;
+		}
+
+		int aux = 1;
+		while (aux < position) {
+			previous = previous.getNext();
+			aux++;
+		}
+		previous.setNext(new Node<>(previous.getNext(), element));
 		size++;
 	}
 
