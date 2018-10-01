@@ -28,5 +28,7 @@ public class TestFactorialRecursion {
 		assertEquals(5040, rec.function(7));
 		assertEquals(40320, rec.function(8));
 		assertEquals(362880, rec.function(9));
+		assertEquals(3628800, rec.function(10));
+		assertEquals(479001600, rec.function(12));
 	}
 }
